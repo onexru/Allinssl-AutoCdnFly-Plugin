@@ -54,7 +54,7 @@ func Monitor(cfg map[string]any) (*Response, error) {
 
 	if len(needList) == 0 {
 		return &Response{
-			Status:  "error",
+			Status:  "success",
 			Message: "没有需要更新的证书",
 		}, nil
 	}
@@ -63,7 +63,7 @@ func Monitor(cfg map[string]any) (*Response, error) {
 	matchList := domain.CheckCertDomains(domains, needList)
 	if len(matchList) == 0 {
 		return &Response{
-			Status:  "error",
+			Status:  "success",
 			Message: "没有匹配的证书和站点",
 		}, nil
 	}
